@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
+This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: StatisticalApplications.aux
 The style file: biblatex.bst
@@ -21,44 +21,44 @@ Database file #2: ThomasReferenties.bib
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 1 entry,
+You've used 3 entries,
             6256 wiz_defined-function locations,
-            1176 strings with 8614 characters,
-and the built_in function-call counts, 1210 in all, are:
-= -- 58
-> -- 52
-< -- 1
-+ -- 37
-- -- 22
-* -- 24
-:= -- 275
+            1188 strings with 8866 characters,
+and the built_in function-call counts, 11188 in all, are:
+= -- 699
+> -- 266
+< -- 80
++ -- 230
+- -- 89
+* -- 722
+:= -- 1114
 add.period$ -- 0
-call.type$ -- 1
-change.case$ -- 0
+call.type$ -- 3
+change.case$ -- 48
 chr.to.int$ -- 30
-cite$ -- 0
-duplicate$ -- 11
-empty$ -- 86
-format.name$ -- 0
-if$ -- 265
+cite$ -- 4
+duplicate$ -- 1076
+empty$ -- 1076
+format.name$ -- 130
+if$ -- 2422
 int.to.chr$ -- 0
-int.to.str$ -- 0
+int.to.str$ -- 5
 missing$ -- 0
-newline$ -- 24
-num.names$ -- 0
-pop$ -- 40
+newline$ -- 77
+num.names$ -- 111
+pop$ -- 724
 preamble$ -- 2
-purify$ -- 0
+purify$ -- 55
 quote$ -- 0
-skip$ -- 66
+skip$ -- 460
 stack$ -- 0
-substring$ -- 110
-swap$ -- 1
-text.length$ -- 14
-text.prefix$ -- 0
+substring$ -- 1090
+swap$ -- 300
+text.length$ -- 68
+text.prefix$ -- 2
 top$ -- 1
-type$ -- 22
+type$ -- 90
 warning$ -- 0
-while$ -- 45
+while$ -- 140
 width$ -- 0
-write$ -- 23
+write$ -- 74

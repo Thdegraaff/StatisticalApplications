@@ -20,5 +20,58 @@
 \preamble{%
  \newcommand{\noop}[1]{}
 }
+
+  \entry{angrist2008mostly}{book}{}
+    \name{author}{2}{}{%
+      {{hash=AJD}{%
+         family={Angrist},
+         familyi={A\bibinitperiod},
+         given={Joshua\bibnamedelima D},
+         giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=PJS}{%
+         family={Pischke},
+         familyi={P\bibinitperiod},
+         given={J{\"o}rn-Steffen},
+         giveni={J\bibinitperiod-S\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Princeton university press}%
+    }
+    \strng{namehash}{AJDPJS1}
+    \strng{fullhash}{AJDPJS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Mostly harmless econometrics: An empiricist's companion}
+    \field{year}{2008}
+  \endentry
+
+  \entry{healy2011choosing}{article}{}
+    \name{author}{1}{}{%
+      {{hash=HK}{%
+         family={Healy},
+         familyi={H\bibinitperiod},
+         given={Kieran},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HK1}
+    \strng{fullhash}{HK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{2}
+    \field{pages}{9\bibrangedash 18}
+    \field{title}{Choosing your workflow applications}
+    \field{volume}{18}
+    \field{journaltitle}{The Political Methodologist}
+    \field{year}{2011}
+  \endentry
 \endsortlist
 \endinput
