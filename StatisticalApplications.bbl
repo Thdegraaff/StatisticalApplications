@@ -135,6 +135,65 @@
     \field{year}{1984}
   \endentry
 
+  \entry{sargent2015quantitative}{report}{}
+    \name{author}{2}{}{%
+      {{hash=ST}{%
+         family={Sargent},
+         familyi={S\bibinitperiod},
+         given={Thomas},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={Stachurski},
+         familyi={S\bibinitperiod},
+         given={John},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{STSJ1}
+    \strng{fullhash}{STSJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Quantitative economics with python}
+    \list{institution}{1}{%
+      {Technical report, Lecture Notes}%
+    }
+    \field{type}{techreport}
+    \field{year}{2015}
+  \endentry
+
+  \entry{stock2007introduction}{article}{}
+    \name{author}{2}{}{%
+      {{hash=SJH}{%
+         family={Stock},
+         familyi={S\bibinitperiod},
+         given={James\bibnamedelima H},
+         giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod},
+      }}%
+      {{hash=WMW}{%
+         family={Watson},
+         familyi={W\bibinitperiod},
+         given={Mark\bibnamedelima W},
+         giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Pearson/Addison Wesley Boston}%
+    }
+    \strng{namehash}{SJHWMW1}
+    \strng{fullhash}{SJHWMW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2007}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{Introduction to econometrics}
+    \field{year}{2007}
+  \endentry
+
   \entry{wickham2013implementation}{article}{}
     \name{author}{2}{}{%
       {{hash=WH}{%
