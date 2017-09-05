@@ -37,6 +37,34 @@
 }
 
 %----------------------------------------------------------------------------------------
+%	CODE LISTING
+%----------------------------------------------------------------------------------------
+
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=R,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+%----------------------------------------------------------------------------------------
 %	COLUMNS
 %----------------------------------------------------------------------------------------
 
@@ -55,7 +83,7 @@
 %----------------------------------------------------------------------------------------
 
 \usepackage{hyperref} % Required for hyperlinks
-\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=color2,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={What drives which region?},pdfauthor={Thomas de Graaff}}
+\hypersetup{hidelinks,colorlinks,breaklinks=true,urlcolor=blue,citecolor=color1,linkcolor=color1,bookmarksopen=false,pdftitle={What drives which region?},pdfauthor={Thomas de Graaff}}
 
 %----------------------------------------------------------------------------------------
 %	ARTICLE INFORMATION
@@ -176,13 +204,13 @@ software package to be used for teaching in the social sciences.
   application still mostly used would be the ubiquitous Excel and its related
   visual basic language.
 \item[Flexibility] Ideally, a software approach should be both extendable and scalable. The former ensures that slight deviations from standard approaches can relatively easy be implemented. The latter is important when the size of the database increases, as typically is the case with recent improvements in remote sensing techniques.
-\item[Scriptable] Finally, a software package should be scriptable---both internally as externally. Internally scriptable indicates that within the package scripts or programs can be written so that every step within the workflow can be reproduced. With externally scriptable I entail that the software package should also be used in combination with other software packages of languages, such as \LaTeX, markdown, make, html, sql, etc.
+\item[Scriptable] Finally, a software package should be scriptable---both internally as externally. Internally scriptable indicates that within the package scripts or programs can be written so that every step within the workflow can be reproduced. With externally scriptable I mean that the software package should also be used in combination with other software packages or languages, such as \LaTeX, markdown, make, html, sql, C++, etc.
 \end{description}
 Other software packages that I will not review, typically score badly on more than one of these criteria. For example, SPSS is proprietary software, which has some issues with scriptability and is not very flexible. Moreover, a sizeable part of the user community moved over to other software packages (most notably R). Other software packages I will not review for reasons of similarity (such as Matlab to some extent) or my lack of experience with them (most notably SAS).\footnote{I should mention the object oriented matrix language Ox as well, which is mostly used by econometricians. Because of the steep learning curve and relatively small community I will not consider it here, but I am aware of its popularity in some particular research groups.}
 
 \subsection*{STATA}
 
-STATA is proprietary software copyrighted by the StataCorp LLC corporation.\footnote{See \href{https://www.stata.com}{https://www.stata.com/}.} It is especially popular among economists, although the growth of STATA seems almost comparable with that of R (Python is in its own league, however).\footnote{I have to be careful though for these sorts of statements. Usually, the popularity of these packages is researched by looking at search engine counts for jobs, frequently asked questions or counting popularity on the stackoverflow site (\href{https://stackoverflow.com/}{https://stackoverflow.com/}). An interesting recent overview can be found on \href{http://r4stats.com/2017/06/19/scholarly-articles/}{http://r4stats.com/2017/06/19/scholarly-articles/}.}
+STATA is proprietary software copyrighted by the StataCorp LLC corporation.\footnote{See \href{https://www.stata.com}{https://www.stata.com/}.} It is especially popular among economists, although the growth of STATA seems almost comparable with that of R (Python is in its own league, however).\footnote{I have to be careful though for these sorts of statements. Usually, the popularity of software applications is researched by looking at search engine counts for jobs, frequently asked questions or counting popularity on the stackoverflow site (\href{https://stackoverflow.com/}{https://stackoverflow.com/}). An interesting recent overview can be found on \href{http://r4stats.com/2017/06/19/scholarly-articles/}{http://r4stats.com/2017/06/19/scholarly-articles/}.}
 
 The biggest comparative advantage of STATA is its learning curve (although some students might disagree). It is relatively straightforward to teach students basic econometrics (including time series, panel data and count data techniques, discrete choice models and duration models). Moreover, they can do so in a structured way by writing scripts (the so-called do files). Many students appreciate as well the fact that STATA command can be given interactively (via a drop-down menu) of directly from the console enabling them to memorize the various commands on the fly. 
 
@@ -194,21 +222,37 @@ Another downside is the flexibility of STATA. For procedures that slightly devia
 
 STATA itself is well scriptable internally. although it is less programming and more sequencing commands, for the majority of research projects this is definitely good enough. Externally, however, it is another issues which has to do with its proprietary nature. Other applications, such as great ?nix utilities as make and pandoc but as well git and github have difficulties `communicating' with STATA. It is possible, however, to export from STATA to other formats, especially the ubiquitous text files, which enables automatic generation of \LaTeX\ tables.
 
-Finally, STATA is alas not open source. This hinders reproducibility, insight in the source code (``How the hell did they do that?'') as well as the transferability of data (the STATA .dta dataformat is not accessible to read directly, although many other packages, including R, have created special read procedures for STATA).
+Finally, STATA is alas not open source. This hinders reproducibility, insight in the source code (``How the hell did they do that?'') as well as the transferability of data (the STATA .dta dataformat is not accessible to read directly, although many other packages, including R, have created special read procedures for STATA dataformats).
 
 \subsection*{R}
 
-R emerged in 1995 as the open-source version of the S language and quickly surpassed its predecessor in popularity.\footnote{See \href{https://www.r-project.org/about.html}{https://www.r-project.org/about.html}.} R itself consists of a base distribution which can be enhanced with packages, and it is exactly the ease of writing, distributing and using packages that makes R so attractive for many users. At the moment there are more than 10,000 packages on the official CRAN website, but Github contains many more.\footnote{See \href{http://blog.revolutionanalytics.com/2017/01/cran-10000.html}{http://blog.revolutionanalytics.com/2017/01/cran-10000.html}.}
+R emerged in 1995 as the open-source (GNU) version of the S language and quickly surpassed its predecessor in popularity.\footnote{See \href{https://www.r-project.org/about.html}{https://www.r-project.org/about.html}.} R itself consists of a base distribution which can be enhanced with packages, and it is exactly the ease of writing, distributing and using packages that makes R so attractive for many users. At the moment there are more than 10,000 packages on the official CRAN website, but Github contains many more.\footnote{See \href{http://blog.revolutionanalytics.com/2017/01/cran-10000.html}{http://blog.revolutionanalytics.com/2017/01/cran-10000.html}.}
 
 Because of its open-source nature and its large and very active community, the quality of most of the packages is almost guaranteed. Indeed, if there are killer applications in the data science world, then R has most of them, with as most notifiable examples dplyr for quick and robust data manipulation and ggplot2 for structural plotting using the \textit{grammar of graphics} approach as advocated by \citet{wilkinson2006grammar} and implemented by \citet{wickham2013implementation}. 
 
-The learning curve of R is however steeper than of STATA. The following quote is typically mentioned when referring to R:
+The learning curve of R is however steeper than that of STATA.\footnote{Steep learning curves are in principle not problematic as it indicates that you learn rapidly and in the end the pay-off should be large. For `quick and dirty' solutions, however, steep learning curves are problematic.} Moreover, R can be characterized as:
 \begin{quote}
 	first, R is written by statisticians, for statisticians.
 \end{quote}
-Unfortunately, this can be seen in the R language itself. Best described as `quirky', the R language is not the most beautiful or best designed. For example, usually there is more than one (often actually more than three) way to accomplish something, which leads to a myriad of styles and types of coding. In applied statistics though, R shines. Although slightly more cumbersome than STATA, commands for basic techniques are relatively straightforward 
+Unfortunately, this can be seen in the R language itself. Best described as `quirky', the R language is not the most beautiful or best designed programming language. For example, usually there is more than one (often actually more than three) ways to accomplish something, which leads to a myriad of styles and types of coding. In applied statistics though, R shines. Although slightly more cumbersome than STATA, commands for basic econometric techniques are relatively straightforward. Estimating a linear regression simply looks as follows:
+
+\begin{lstlisting}
+# ordinary least squares regression
+model <- lm(y ~ x1 + x2, data = data1)
+\end{lstlisting}
+Note the difference with STATA, where as in STATA one simply uses \texttt{reg y x1 x2}. However, in R one can store everything in an object (in this case the object ``model'') and use it later, and one can use several databases (`dataframes') at the same time. Both features are extremely useful for dealing with larger research projects. And although STATA still is more straightforward in basic econometrics, R users have developed several packages to emulate STATA's ease of use.\footnote{Good examples are the margins package in R that has similar features as the very useful margins command in STATA and the plm package for implementing fixed effects.}
+
+Because R is very flexible and the community is that huge (across disciplines as well), for almost every (statistical) problem a package most likely is developed (if feasible). The problem is, however, that terminology differs across fields. Moreover, what economists find important (causality anyone?) is generally less important within biometrics, physics, statistics of sociology. So, using R also means spending a great deal of time finding and checking the correct package.\footnote{Fortunately, there is the great website \href{https://cran.r-project.org/web/views/}{CRAN Task Views} which gives good overviews of the most important packages in several subfields, such as dealing with spatial data, Bayesian inference, econometrics and mathematical programming.}
+
+If anything, R if flexible in terms of what it can do. Spatial data analysis, Bayesian inference, optimization, network analysis and---above all---producing wonderful plots that can even be used as interactive web applications. Therefore, it is used intensively outside academia as well by large companies such as Facebook, Google, Twitter, Microsoft, Uber and Airbnb, mainly for `quick and dirty' data science and data and output visualization.
+
+Unfortunately, R is not very scalable, as only internal computer memory (RAM) is used for data storage (similar to matlab, STATA and comparable languages). There are ways to solve this (typically in combination with other languages, such as Hadoop or using parallel computing techniques), but it is cumbersome for very large research projects with huge amounts of data (remote sensing data in geographical analysis comes to mind or up to 100 million records when using micro data).
+
+Finally, R is extremely scriptable, both internally and externally. Internally, the R language is a full blow object-oriented language, although perhaps not the most beautiful one. Especially the ease of writing and reading packages is very useful for groups of researchers who are working on the same project. Externally, R really has a comparative advantage as that it can be scripted from a command line (a terminal), can be used in combination with other languages (e.g., python via rpy and C++ via rcpp to speed up procedures if needed) and works as a charm in combination with both \LaTeX\ and html for creating webpages.\footnote{R has one of the best implementations of so-called literate programming via the package knitr. Literate programming as originally coined by \citet{knuth1984literate} indicates that output of coding and documentation are generated simultaneously. Whether or not this is a good idea for larger research projects, literate programming can be very useful for generating documentation of R packages, web blogs and smaller research papers.}
 
 \subsection*{Python}
+
+Opposite to STATA and even R, Python is a general object oriented programming language more in line with a language such as C++. 
 
 \section*{Statistics in education}
 

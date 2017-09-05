@@ -108,6 +108,33 @@
     \field{year}{2011}
   \endentry
 
+  \entry{knuth1984literate}{article}{}
+    \name{author}{1}{}{%
+      {{hash=KDE}{%
+         family={Knuth},
+         familyi={K\bibinitperiod},
+         given={Donald\bibnamedelima Ervin},
+         giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Oxford University Press}%
+    }
+    \strng{namehash}{KDE1}
+    \strng{fullhash}{KDE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1984}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{number}{2}
+    \field{pages}{97\bibrangedash 111}
+    \field{title}{Literate programming}
+    \field{volume}{27}
+    \field{journaltitle}{The Computer Journal}
+    \field{year}{1984}
+  \endentry
+
   \entry{wickham2013implementation}{article}{}
     \name{author}{2}{}{%
       {{hash=WH}{%
