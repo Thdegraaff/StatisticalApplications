@@ -107,7 +107,7 @@
 %%	ABSTRACT
 %%----------------------------------------------------------------------------------------
 
-\Abstract{This note looks at the suitable of three (statistical) software applications---being STATA, R and Python---for teaching statistics in general and econometrics to the social science (including econometrics). I review each package according to the following criteria: being open source, the steepness of the learning curve, the size of the community, transferability of skills, its flexibility and whether the package is scriptable. I do so, with a specific focus on the increasing emphasis on openness and reproducibility. I will not give a specific recommendation for one software package, but instead plea for more coherence and consistently in teaching our social science students an efficient and reproducible workflow in empirical research.}
+\Abstract{This note looks at the suitability of three (statistical) software applications---being STATA, R and Python---for teaching statistics in general and econometrics to the social science (including econometrics). I review each package according to the following criteria: being open source, the steepness of the learning curve, the size of the community, transferability of skills, its flexibility and whether the package is scriptable. I do so, with a specific focus on the increasing emphasis on openness and reproducibility. I will not give a specific recommendation for one software package, but instead plea for more coherence and consistently in teaching our social science students an efficient and reproducible workflow in empirical research.}
 
 %----------------------------------------------------------------------------------------
 
@@ -126,7 +126,7 @@ The quote above does not only apply to economics and econometrics, but to all of
 the social sciences in general. Empirical research---that is, dealing with data in
 all its forms---requires a rigorous approach, even more so, with the increasing
 emphasis on openness and reproducibility of all kinds of scientific research. Therefore, it is strange
-that in academic education there is not much guidance in choosing which tools to
+that in academic education there is not much guidance in choosing which research tools to
 use and in the philosophy behing choosing an efficient and reproducable
 workflow.\footnote{There are some exceptions, see, e.g.,
   \citet{healy2011choosing} and \citet{Arribas-Bel2014misc} for a workshop I gave together with Daniel Arribas-Bel.}
@@ -149,7 +149,7 @@ larger research project, such as theses and later on perhaps research papers.
 To illustrate why the concept of reproducibility is vital, note that a typical empirical workflow in the social sciences looks as follows:
 \begin{description}
 \item[Generate data] Data is read from an external source (recording, questionnaire, file or online database) or is simulated.  
-\item[Manipulating data] This is usually the most time demanding
+\item[Manipulate data] This is usually the most time demanding
   phase\footnote{There is and old saying that says that 80\% of your research time
   goes in transforming data, while 20\% is only spent on analysing the data.} and
   includes (amongst many other things) manipulating missing data, merging data
@@ -211,13 +211,13 @@ Other software packages that I will not review, typically score badly on more th
 
 STATA is proprietary software copyrighted by the StataCorp LLC corporation.\footnote{See \href{https://www.stata.com}{https://www.stata.com/}.} It is especially popular among economists, although the growth of STATA seems almost comparable with that of R (Python is in its own league, however).\footnote{I have to be careful though for these sorts of statements. Usually, the popularity of software applications is researched by looking at search engine counts for jobs, frequently asked questions or counting popularity on the stackoverflow site (\href{https://stackoverflow.com/}{https://stackoverflow.com/}). An interesting recent overview can be found on \href{http://r4stats.com/2017/06/19/scholarly-articles/}{http://r4stats.com/2017/06/19/scholarly-articles/}.}
 
-The biggest comparative advantage of STATA is its learning curve (although some students might disagree). It is relatively straightforward to teach students basic econometrics (including time series, panel data and count data techniques, discrete choice models and duration models). For example, regressing \texttt{y} on \texttt{x1} and \texttt{x2} can simply be stated as:
+The biggest comparative advantage of STATA is its learning curve (although some students might disagree). It is relatively straightforward to teach students basic econometrics (including time series, panel data and count data techniques, discrete choice models and duration models). Indeed, STATA has the advantage of being one of the only tools dedicated to econometric research. While it is not so flexible, it is often possible (and simple) to apply cutting-edge models and other techniques. For example, regressing \texttt{y} on \texttt{x1} and \texttt{x2} can simply be stated as:
 \begin{lstlisting}[language=R]
 reg y x1 x2
 \end{lstlisting}
 Moreover, you can do so in a structured way by writing scripts (the so-called do files). Many students appreciate as well the fact that STATA command can be given interactively (via a drop-down menu) of directly from the console enabling them to memorize the various commands on the fly. 
 
-There is a large STATA community. This ensures the availability of many useful so-called user-written routines and tutorial material, whether via Youtube or in pdf. The STATA community is not only huge, but as well very helpful (although the help documentation is oftentimes cumbersome). The first hit on Google on a sometimes not very focused question usually suffices.
+There is a large STATA community. This ensures the availability of many useful so-called user-written routines and tutorial material, whether via Youtube or in pdf (there is a STATA journal). The STATA community is not only huge, but as well very helpful (although the help documentation is oftentimes cumbersome). The first hit on Google on a sometimes not very focused question usually suffices.
 
 Unfortunately, not many organizations outside academia use STATA---although I heard recently that some Danish consultancy agencies in Denmark do. Most organizations now typically use R or Python in combination with even more focused software applications as Hadoop or Julia (again, apart from Excel). Usually, this does not matter much as programming skills are easily transferable, but, unfortunately, the STATA language is hardly a programming language. Instead, it is more a sequence of very specific commands. Therefore, it is hard to relate the commands to something as Python.
 
@@ -233,7 +233,9 @@ R emerged in 1995 as the open-source (GNU) version of the S language and quickly
 
 Because of its open-source nature and its large and very active community, the quality of most of the packages is almost guaranteed. Indeed, if there are killer applications in the data science world, then R has most of them, with as most notifiable examples dplyr for quick and robust data manipulation and ggplot2 for structural plotting using the \textit{grammar of graphics} approach as advocated by \citet{wilkinson2006grammar} and implemented by \citet{wickham2013implementation}. 
 
-The learning curve of R is however steeper than that of STATA.\footnote{Steep learning curves are in principle not problematic as it indicates that you learn rapidly and in the end the pay-off should be large. For `quick and dirty' solutions, however, steep learning curves are problematic.} Moreover, R can be characterized as:
+The learning curve of R is however steeper than that of STATA.\footnote{Steep learning curves are in principle not problematic as it indicates that you learn rapidly and in the end the pay-off should be large. For `quick and dirty' solutions, however, steep learning curves are problematic.} Having said that, learning basic R is still relatively quick (and accessible) and can be done in a short time with a free online course. Today, teaching Stata to students requires a tutorial class, or few classes. 
+
+Typically, R is characterized as:
 \begin{quote}
 	R is written by statisticians, for statisticians.
 \end{quote}
@@ -242,12 +244,13 @@ Unfortunately, this can be seen in the R language itself. Best described as `qui
 \begin{lstlisting}[language=R]
 # ordinary least squares regression
 model <- lm(y ~ x1 + x2, data = data1)
+summary(model)
 \end{lstlisting}
 Note the difference with STATA, where in STATA one simply uses \texttt{reg y x1 x2}. However, in R one can store everything in an object (in this case the object ``model'') and use it later, and one can use several databases (`dataframes') at the same time. Both features are extremely useful for dealing with larger research projects. And although STATA still is more straightforward in basic econometrics, R users have developed several packages to emulate STATA's ease of use.\footnote{Good examples are the margins package in R that has similar features as the very useful margins command in STATA and the plm package for implementing fixed effects.}
 
-Because R is very flexible and the community is that huge (across disciplines as well), for almost every (statistical) problem a package most likely is developed (if feasible). The problem is, however, that terminology differs across fields. Moreover, what economists find important (causality anyone?) is generally less important within biometrics, physics, statistics of sociology. So, using R also means spending a great deal of time finding and checking the correct package.\footnote{Fortunately, there is the great website \href{https://cran.r-project.org/web/views/}{CRAN Task Views} which gives good overviews of the most important packages in several subfields, such as dealing with spatial data, Bayesian inference, econometrics and mathematical programming.}
+Because R is very flexible and the community is that huge (across disciplines as well), for almost every (statistical) problem a package most likely is developed (if feasible). The problem is, however, that terminology with respect to models differs across fields. Moreover, what economists find important (causality anyone?) is generally less important within biometrics, physics, statistics of sociology. So, using R also means spending a great deal of time finding and checking the correct package.\footnote{Fortunately, there is the great website \href{https://cran.r-project.org/web/views/}{CRAN Task Views} which gives good overviews of the most important packages in several subfields, such as dealing with spatial data, Bayesian inference, econometrics and mathematical programming.}
 
-If anything, R if flexible in terms of what it can do. Spatial data analysis, Bayesian inference, optimization, network analysis and---above all---producing wonderful plots that can even be used as interactive web applications. Therefore, it is used intensively outside academia as well by large companies such as Facebook, Google, Twitter, Microsoft, Uber and Airbnb, mainly for `quick and dirty' data science and data and output visualization.
+If anything, R if flexible in terms of what it can do. Spatial data analysis, Bayesian inference, optimization, network analysis and---above all---producing wonderful plots that can even be used as interactive web applications. Therefore, it is used intensively outside academia as well by large companies such as Facebook, Google, Twitter, Microsoft, Booking.com, Uber and Airbnb, mainly for `quick and dirty' data science and data and output visualization.
 
 Unfortunately, R is not very scalable, as only internal computer memory (RAM) is used for data storage (similar to matlab, STATA and comparable languages). There are ways to circumvent this (typically in combination with other languages, such as Hadoop or using parallel computing techniques), but it is cumbersome for very large research projects with huge amounts of data (remote sensing data in geographical analysis comes to mind or up to 100 million records when using micro data).
 
@@ -257,23 +260,15 @@ Finally, R is extremely scriptable, both internally and externally. Internally, 
 
 Opposite to STATA and even R, Python is an open source general object oriented programming language more in line with a language such as C++.\footnote{See \href{https://www.python.org/}{https://www.python.org/}.} Python was implemented by Guido van Rossum in the late 1980's and was built on the Modula-3 programming language. As it is a general progamming language one needs several so-called packages in order to make it work for econometrics in particular and data science in general, most notably: NumPy, SciPy, Matplotlib and pandas.
 
-Using Python for applied econometrics is not as straightforward as in STATA or R.\footnote{Although there are some good tutorial texts to be found on internet, such as \citet{sargent2015quantitative}.} A typical regression routine looks as follows:
+Using Python for applied econometrics is not as straightforward as in STATA but nowadays relatively similar to R using SciPy.\footnote{Although there are some good tutorial texts to be found on internet, such as \citet{sargent2015quantitative}.} A typical regression routine looks as follows:
 \begin{lstlisting}[language=python]
-# ordinary least squares regression
-from sklearn import datasets, linear_model
-
-# Create linear regression object
-regr = linear_model.LinearRegression()
-
-# Regress the model using X and y
-regr.fit(X, y)
-
-# The coefficients
-print('Coefficients: \n', regr.coef_)
+import ols
+mymodel = ols.ols(y,x,y_varnm,x_varnm)
+mymodel_summary()
 \end{lstlisting}
-This actually means that one first has to create a linear model object and then has to fill in with details, such as the fit and so on. 
+which is rather close to R, although ols class from SciPy needs to be loaded. The class is however not as general as the lm function from R. 
 
-For an introductory econometrics course this might be too cumbersome. However, the language itself is defined beautifully and \textbf{everything} works similarly. So, once you get used to the seemingly cumbersome approach of Python with respect to basic econometrics, other functionalities requires far less investment in time, because the grammar, style and approach is always consistent.\footnote{For example, working with geospatial data by using the excellent \href{http://geopandas.org/}{GeoPandas} package is then a breeze, which as a bonus might also obfuscates the need for using expensive and bloated GIS software applications.} Note, that is rather different from R which is far more chaotic in terms of approaches.
+For an introductory econometrics course this might be too cumbersome. However, the language itself is defined beautifully and \textbf{everything} works similarly. So, once you get used to the seemingly cumbersome approach of Python with respect to basic econometrics, other functionalities requires far less investment in time, because the grammar, style and approach is always consistent.\footnote{For example, working with geospatial data by using the excellent \href{http://geopandas.org/}{GeoPandas} package is then a breeze, which as a bonus might also obfuscates the need for using expensive and bloated GIS software applications.} Note, that this is rather different from R which is far more chaotic in terms of approaches, which might lead to the argument that Python is actually simpler than R to learn because of its uniformity.
 
 So, arguably the learning curve of Python is much steeper than that of STATA or R. However, in the end it does pay off when learning the language as it is not only a good language for learning programming, it is as well very useful for projects just outside the realm of basic econometrics. Working with strings (text analysis), images, spatial data, API's, large amounts of data, etcetera, is all very common and relatively straightforward in Python. Moreover, the community is very large (larger than that of R). But, not all of them are working in data science. 
 
